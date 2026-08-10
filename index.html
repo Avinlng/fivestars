@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>آکادمی پنج ستاره</title>
-    <!-- Font: YekanBakh (مشابه سایت اصلی) -->
     <style>
         @font-face {
             font-family: 'YekanBakh';
@@ -77,9 +76,9 @@
 
         /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(135deg, #004687 0%, #002f5e 100%);
+            background: #004687;
             color: #fff;
-            padding: 60px 0 50px;
+            padding: 50px 0 40px;
         }
         .hero-grid {
             display: grid;
@@ -88,14 +87,24 @@
             align-items: center;
         }
         .hero-content h1 {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 800;
             line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .hero-content .subhead {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e56688;
+            margin-bottom: 6px;
+        }
+        .hero-content .badge {
+            font-size: 14px;
+            opacity: 0.8;
             margin-bottom: 16px;
         }
-        .hero-content h1 span { color: #e56688; }
-        .hero-content p {
-            font-size: 17px;
+        .hero-content .desc {
+            font-size: 16px;
             opacity: 0.92;
             margin-bottom: 24px;
             max-width: 90%;
@@ -117,12 +126,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(229,102,136,0.3);
         }
-        .hero-trust {
-            margin-top: 12px;
-            font-size: 14px;
-            opacity: 0.7;
-        }
-        /* تصویر دو کودک (carve + اندازه) */
         .hero-image {
             display: flex;
             justify-content: center;
@@ -143,43 +146,37 @@
             box-shadow: 0 24px 48px rgba(0,0,0,0.35);
         }
 
-        /* ===== بخش تشویق به اسکرول (زیر هدر) ===== */
+        /* ===== اسکرول‌کننده (غیرمستقیم) ===== */
         .scroll-cta {
             background: #f0f4fa;
-            padding: 28px 0 20px;
+            padding: 18px 0;
             text-align: center;
             border-bottom: 1px solid rgba(0,70,135,0.08);
         }
         .scroll-cta p {
-            font-size: 17px;
+            font-size: 16px;
             color: #004687;
             font-weight: 500;
         }
-        .scroll-cta span {
-            display: inline-block;
-            animation: bounce-down 1.8s infinite;
-        }
-        @keyframes bounce-down {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(6px); }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #004687;
+            margin-bottom: 32px;
         }
 
         /* ===== BENEFITS ===== */
         .benefits {
-            padding: 60px 0 50px;
+            padding: 50px 0 40px;
             background: #fff;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 30px;
-            font-weight: 700;
-            color: #004687;
-            margin-bottom: 36px;
         }
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-            gap: 30px;
+            gap: 28px;
         }
         .benefit-card {
             background: #f8faff;
@@ -193,13 +190,13 @@
             border-color: #004687;
             transform: translateY(-4px);
         }
-        .benefit-card .icon { font-size: 42px; margin-bottom: 10px; }
+        .benefit-card .icon { font-size: 40px; margin-bottom: 10px; }
         .benefit-card h3 { color: #004687; font-size: 20px; margin-bottom: 6px; }
         .benefit-card p { color: #555; font-size: 14px; }
 
         /* ===== SERVICES ===== */
         .services {
-            padding: 60px 0;
+            padding: 50px 0;
             background: #f7f9fc;
         }
         .services-grid {
@@ -216,7 +213,7 @@
         }
         .service-card:hover { transform: translateY(-6px); }
         .service-card .img-place {
-            height: 140px;
+            height: 130px;
             background: #dce5f0;
             display: flex;
             align-items: center;
@@ -226,11 +223,11 @@
             border-bottom: 3px solid #e56688;
         }
         .service-card .body {
-            padding: 16px 18px 20px;
+            padding: 14px 18px 18px;
         }
         .service-card .body h4 {
             color: #004687;
-            font-size: 18px;
+            font-size: 17px;
             margin-bottom: 4px;
         }
         .service-card .body p {
@@ -244,65 +241,151 @@
             font-size: 13px;
         }
 
+        /* ===== STATS ===== */
+        .stats {
+            padding: 8px 0 30px;
+            background: #fff;
+        }
+        .stat-box {
+            background: #004687;
+            color: #fff;
+            border-radius: 18px;
+            padding: 22px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .number {
+            font-size: 34px;
+            font-weight: 800;
+            color: #e56688;
+        }
+        .stat-item .label {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
         /* ===== TESTIMONIALS ===== */
         .testimonials {
-            padding: 60px 0;
+            padding: 50px 0 30px;
             background: #fff;
         }
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+            gap: 24px;
         }
         .testimonial-item {
             background: #f8faff;
-            padding: 24px 22px;
+            padding: 20px 20px;
             border-radius: 18px;
             border-right: 4px solid #e56688;
         }
-        .testimonial-item .avatar {
-            width: 48px;
-            height: 48px;
-            background: #004687;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .testimonial-item .name {
-            font-weight: 700;
-            color: #004687;
-        }
-        .testimonial-item .role { font-size: 13px; color: #888; }
         .testimonial-item .text {
-            margin-top: 10px;
             font-size: 14px;
             color: #333;
             line-height: 1.7;
         }
-        .stat-box {
-            text-align: center;
-            margin-top: 34px;
-            background: #eef3f9;
-            padding: 18px;
-            border-radius: 16px;
-        }
-        .stat-box strong {
-            font-size: 22px;
-            color: #004687;
-        }
-        .stat-box .highlight {
-            color: #e56688;
+        .testimonial-item .name {
             font-weight: 700;
+            color: #004687;
+            margin-top: 6px;
+            font-size: 14px;
+        }
+
+        /* ===== نظر (دکوری) ===== */
+        .review-box {
+            max-width: 520px;
+            margin: 30px auto 0;
+            background: #f8faff;
+            padding: 28px 24px;
+            border-radius: 20px;
+            border: 1px solid #eef3f9;
+        }
+        .review-box h4 {
+            color: #004687;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        .review-box .sub {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 16px;
+        }
+        .review-box .form-group {
+            margin-bottom: 12px;
+        }
+        .review-box .form-group label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #004687;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .review-box .form-group input,
+        .review-box .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #dde3ec;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 14px;
+            background: #fff;
+        }
+        .review-box .form-group textarea {
+            resize: vertical;
+        }
+        .review-box .form-group input:focus,
+        .review-box .form-group textarea:focus {
+            border-color: #004687;
+            outline: none;
+        }
+        .review-box .row2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .review-box .save-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0 16px;
+        }
+        .review-box .save-info input {
+            width: 18px;
+            height: 18px;
+            accent-color: #004687;
+        }
+        .review-box .save-info label {
+            font-size: 13px;
+            color: #555;
+        }
+        .btn-review {
+            width: 100%;
+            background: #004687;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .btn-review:hover {
+            background: #002f5e;
         }
 
         /* ===== FAQ ===== */
         .faq {
-            padding: 60px 0;
+            padding: 50px 0;
             background: #f7f9fc;
         }
         .faq-list {
@@ -310,12 +393,12 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
         .faq-item {
             background: #fff;
             border-radius: 14px;
-            padding: 16px 22px;
+            padding: 14px 22px;
             border: 1px solid #e6ecf3;
         }
         .faq-item summary {
@@ -327,7 +410,7 @@
         }
         .faq-item summary:hover { color: #e56688; }
         .faq-item p {
-            margin-top: 10px;
+            margin-top: 8px;
             color: #444;
             font-size: 15px;
             padding-right: 6px;
@@ -335,34 +418,34 @@
 
         /* ===== FORM ===== */
         .form-section {
-            padding: 60px 0;
+            padding: 50px 0 60px;
             background: #fff;
         }
         .form-box {
-            max-width: 600px;
+            max-width: 580px;
             margin: 0 auto;
             background: #f8faff;
-            padding: 38px 34px;
+            padding: 34px 32px;
             border-radius: 24px;
             box-shadow: 0 8px 28px rgba(0,0,0,0.05);
         }
         .form-box h2 {
             color: #004687;
             text-align: center;
-            font-size: 26px;
+            font-size: 24px;
         }
         .form-box .sub {
             text-align: center;
             color: #666;
-            margin-bottom: 22px;
-            font-size: 15px;
+            margin-bottom: 18px;
+            font-size: 14px;
         }
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
         .form-group label {
             display: block;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 14px;
             color: #004687;
             margin-bottom: 4px;
@@ -370,7 +453,7 @@
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 11px 16px;
+            padding: 10px 14px;
             border: 1px solid #dde3ec;
             border-radius: 12px;
             font-family: inherit;
@@ -389,7 +472,7 @@
             padding: 14px;
             border: none;
             border-radius: 50px;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             cursor: pointer;
             transition: 0.25s;
@@ -402,7 +485,7 @@
         footer {
             background: #004687;
             color: #fff;
-            padding: 36px 0 20px;
+            padding: 32px 0 18px;
         }
         .footer-inner {
             display: flex;
@@ -412,7 +495,7 @@
         }
         .footer-col h5 {
             font-size: 16px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #e56688;
         }
         .footer-col a {
@@ -426,8 +509,8 @@
         .footer-slogan {
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 20px;
-            margin-top: 26px;
+            padding-top: 18px;
+            margin-top: 22px;
             font-size: 15px;
             opacity: 0.85;
         }
@@ -441,17 +524,23 @@
             }
             .hero-content p { max-width: 100%; }
             .hero-image img { max-width: 90%; }
-            .hero-content h1 { font-size: 30px; }
+            .hero-content h1 { font-size: 28px; }
+            .stat-box {
+                flex-direction: column;
+                gap: 16px;
+            }
         }
         @media (max-width: 600px) {
             .header-inner { flex-direction: column; align-items: center; }
             nav { justify-content: center; }
             .logo { font-size: 22px; }
-            .hero { padding: 40px 0 30px; }
-            .hero-content h1 { font-size: 24px; }
+            .hero { padding: 30px 0 20px; }
+            .hero-content h1 { font-size: 22px; }
             .btn-primary { padding: 12px 28px; font-size: 16px; }
-            .form-box { padding: 24px 18px; }
+            .form-box { padding: 20px 16px; }
             .footer-inner { flex-direction: column; text-align: center; }
+            .stat-item .number { font-size: 26px; }
+            .review-box .row2 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -476,10 +565,11 @@
 <section class="hero">
     <div class="container hero-grid">
         <div class="hero-content">
-            <h1>کودک شما با شش ماه زندگی در <span>پنج‌ستاره</span><br>انگلیسی را مثل زبان مادری‌اش صحبت می‌کند.</h1>
-            <p>با متد اختصاصی پنج‌ستاره، کودکتان در محیطی شاد و کاملاً انگلیسی‌زبان، زبان را زندگی می‌کند، نه حفظ می‌کند.</p>
-            <a href="#" class="btn-primary">ثبت‌نام در کلاس تستی رایگان</a>
-            <div class="hero-trust">بدون تعهد، مشاوره رایگان</div>
+            <div class="subhead">زندگی روزانه کودک در محیط انگلیسی</div>
+            <h1>تخصصی ترین آکادمی انگلیسی در جنوب کشور</h1>
+            <div class="badge">مهد . پیش دبستان . دبستان</div>
+            <p class="desc">در آکادمی پنج‌ستاره، آموزش زبان فقط حفظ کلمات نیست؛ ما مسیر رشد، اعتمادبه‌نفس و موفقیت هر کودک را می‌سازیم. کودکان در محیطی شاد، امن و الهام‌بخش، زبان انگلیسی را به‌صورت واقعی زندگی می‌کنند و هم‌زمان مهارت‌های ارتباطی، تفکر و شخصیت آن‌ها تقویت می‌شود.</p>
+            <a href="#" class="btn-primary">پیش ثبت نام</a>
         </div>
         <div class="hero-image">
             <img src="https://fivestarsacademy.ir/wp-content/uploads/2026/07/IMG_2806-scaled.jpeg" alt="دو کودک در آکادمی پنج ستاره" loading="lazy">
@@ -487,32 +577,32 @@
     </div>
 </section>
 
-<!-- ===== اسکرول‌کننده (تشویق به پایین آمدن) ===== -->
+<!-- ===== اسکرول‌کننده ===== -->
 <div class="scroll-cta">
     <div class="container">
-        <p>👇 <span>↓</span>  برای آشنایی با مسیر رشد فرزندتان، پایین اسکرول کنید  <span>↓</span></p>
+        <p>✨ برای آشنایی با مسیر رشد فرزندتان، تا انتهای این صفحه با ما همراه باشید.</p>
     </div>
 </div>
 
 <!-- ===== BENEFITS ===== -->
 <section class="benefits">
     <div class="container">
-        <h2 class="section-title">چرا پنج‌ستاره؟</h2>
+        <h2 class="section-title">در پنج ستاره...</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
                 <div class="icon">🧸</div>
                 <h3>یادگیری با زندگی</h3>
-                <p>کودک زبان را با قصه، بازی و آهنگ تجربه می‌کند، نه با کتاب و حفظ کردن.</p>
+                <p>برنامه‌های آموزشی پنج‌ستاره بر پایه استانداردهای بین‌المللی طراحی شده و پیشرفت هر زبان‌آموز به‌صورت فردی رصد و پشتیبانی می‌شود.</p>
             </div>
             <div class="benefit-card">
                 <div class="icon">🌍</div>
                 <h3>محیط کاملاً انگلیسی</h3>
-                <p>از لحظه ورود، همه‌چیز به انگلیسی است؛ درست مثل یک سفر به یک کشور انگلیسی‌زبان.</p>
+                <p>در پنج‌ستاره، آموزش دو‌زبانه ابزار ارتباط و تفکر است، نه صرفاً یک درس. با همراهی معلمان حرفه‌ای و تیم آموزشی متخصص، کودکان برای آینده‌ای جهانی آماده می‌شوند.</p>
             </div>
             <div class="benefit-card">
                 <div class="icon">👩‍🏫</div>
                 <h3>پشتیبانی فردی</h3>
-                <p>هر کودک مسیر یادگیری منحصربه‌فرد خود را دارد و پیشرفت او ماهانه رصد می‌شود.</p>
+                <p>ما باور داریم هر کودک منحصربه‌فرد است و باید در مسیری هدفمند، قابل‌اندازه‌گیری و متناسب با توانایی‌هایش رشد کند.</p>
             </div>
         </div>
     </div>
@@ -526,16 +616,16 @@
             <div class="service-card">
                 <div class="img-place">📸 مهدکودک</div>
                 <div class="body">
-                    <h4>مهدکودک دوزبانه</h4>
-                    <p>آغاز مسیر دو‌زبانه با قصه و بازی</p>
+                    <h4>مهد انگلیسی</h4>
+                    <p>شروع مسیر دو‌زبانه با قصه و بازی</p>
                     <a href="#">اطلاعات بیشتر →</a>
                 </div>
             </div>
             <div class="service-card">
                 <div class="img-place">📸 پیش‌دبستان</div>
                 <div class="body">
-                    <h4>پیش‌دبستان دوزبانه</h4>
-                    <p>پلی مطمئن به دبستان با مهارت‌های زبانی</p>
+                    <h4>پیش دبستان دوزبانه</h4>
+                    <p>بازدید از کارخانه دایتی</p>
                     <a href="#">اطلاعات بیشتر →</a>
                 </div>
             </div>
@@ -550,8 +640,16 @@
             <div class="service-card">
                 <div class="img-place">📸 ترمیک و کمپ</div>
                 <div class="body">
-                    <h4>دوره‌های ترمیک و کمپ</h4>
+                    <h4>دوره‌های ترمیک و کمپ انگلیسی</h4>
                     <p>یادگیری عمیق و پروژه‌محور در محیط انگلیسی</p>
+                    <a href="#">اطلاعات بیشتر →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="img-place">📸 آنلاین</div>
+                <div class="body">
+                    <h4>دوره‌های آنلاین</h4>
+                    <p>یادگیری در هر زمان و هر مکان</p>
                     <a href="#">اطلاعات بیشتر →</a>
                 </div>
             </div>
@@ -559,32 +657,74 @@
     </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials">
+<!-- ===== STATS ===== -->
+<section class="stats">
     <div class="container">
-        <h2 class="section-title">والدین چه می‌گویند؟</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-item">
-                <div class="avatar">م</div>
-                <div class="name">مادرِ امیرمهدی</div>
-                <div class="role">والدین مهد</div>
-                <div class="text">«فرزندم از اول اصلاً به انگلیسی علاقه نداشت، ولی بعد از سه ماه در پنج‌ستاره، خودش با اشتیاق با من انگلیسی حرف می‌زنه! واقعاً روش‌شون معجزه‌ست.»</div>
+        <div class="stat-box">
+            <div class="stat-item">
+                <div class="number">۶۰۰+</div>
+                <div class="label">دانش‌آموز راضی</div>
             </div>
-            <div class="testimonial-item">
-                <div class="avatar">ن</div>
-                <div class="name">پدرِ نیلوفر</div>
-                <div class="role">والدین پیش‌دبستان</div>
-                <div class="text">«محیط فوق‌العاده شاد و امنی دارن. پسرم هر روز با ذوق می‌ره مهد و من پیشرفت شگفت‌انگیزش رو می‌بینم.»</div>
+            <div class="stat-item">
+                <div class="number">۳</div>
+                <div class="label">شعبه فعال</div>
             </div>
-            <div class="testimonial-item">
-                <div class="avatar">س</div>
-                <div class="name">مادرِ آریا</div>
-                <div class="role">والدین دبستان</div>
-                <div class="text">«دبستان پنج‌ستاره واقعاً متفاوته. درس‌ها به انگلیسی تدریس میشه و بچه‌ها بدون استرس، زبان رو یاد می‌گیرن.»</div>
+            <div class="stat-item">
+                <div class="number">۱۵</div>
+                <div class="label">سال سابقه درخشان</div>
             </div>
         </div>
-        <div class="stat-box">
-            <strong>۳۰۰+</strong> دانش‌آموز راضی در <span class="highlight">۳ شعبه</span>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS + REVIEW FORM ===== -->
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">مشتریان درباره ما چه می‌گویند؟</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <div class="text">«سپاس بابت خدمات بی نظیرتان»</div>
+                <div class="name">- محمد نیازی</div>
+            </div>
+            <div class="testimonial-item">
+                <div class="text">«عالی و متشکرم»</div>
+                <div class="name">- سپهر ملکی</div>
+            </div>
+            <div class="testimonial-item">
+                <div class="text">«همواره بهترین از نظر خدمات و مشاوره»</div>
+                <div class="name">- محمد حامی رضایی</div>
+            </div>
+        </div>
+
+        <!-- ===== فرم ثبت نظر (دکوری) ===== -->
+        <div class="review-box">
+            <h4>📝 دیدگاه خود را بنویسید</h4>
+            <div class="sub">نشانی ایمیل شما منتشر نخواهد شد.</div>
+            <form>
+                <div class="form-group">
+                    <label>دیدگاه</label>
+                    <textarea rows="3" placeholder="دیدگاه شما..."></textarea>
+                </div>
+                <div class="row2">
+                    <div class="form-group">
+                        <label>نام</label>
+                        <input type="text" placeholder="نام شما">
+                    </div>
+                    <div class="form-group">
+                        <label>ایمیل</label>
+                        <input type="email" placeholder="ایمیل شما">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>وب‌سایت (اختیاری)</label>
+                    <input type="text" placeholder="وب‌سایت شما">
+                </div>
+                <div class="save-info">
+                    <input type="checkbox" id="save-info">
+                    <label for="save-info">ذخیره نام، ایمیل و وبسایت من در مرورگر برای زمانی که دوباره دیدگاهی می‌نویسم.</label>
+                </div>
+                <button type="submit" class="btn-review">فرستادن دیدگاه</button>
+            </form>
         </div>
     </div>
 </section>
@@ -595,43 +735,43 @@
         <h2 class="section-title">سوالات متداول</h2>
         <div class="faq-list">
             <details class="faq-item">
-                <summary>چطور می‌تونم فرزندم رو ثبت‌نام کنم؟</summary>
-                <p>از طریق فرم پیش‌ثبت‌نام در همین صفحه، اطلاعات رو وارد کنید. کارشناسان ما با شما تماس می‌گیرند.</p>
+                <summary>چطور می‌توانم فرزندم را ثبت‌نام کنم؟</summary>
+                <p>از طریق فرم پیش‌ثبت‌نام در همین صفحه، اطلاعات را وارد کنید. کارشناسان ما با شما تماس می‌گیرند.</p>
             </details>
             <details class="faq-item">
-                <summary>هزینه‌ها چقدر هست؟</summary>
+                <summary>هزینه‌ها چقدر است؟</summary>
                 <p>هزینه‌ها با توجه به مقطع و دوره متفاوت است. برای اطلاع دقیق، با ما تماس بگیرید.</p>
             </details>
             <details class="faq-item">
-                <summary>کلاس‌ها در چه ساعتی برگزار می‌شه؟</summary>
-                <p>کلاس‌ها از شنبه تا چهارشنبه، ساعت ۹ صبح تا ۱۸ عصر برگزار می‌شه.</p>
+                <summary>کلاس‌ها در چه ساعتی برگزار می‌شوند؟</summary>
+                <p>کلاس‌ها از شنبه تا چهارشنبه، ساعت ۹ صبح تا ۱۸ عصر برگزار می‌شوند.</p>
             </details>
             <details class="faq-item">
                 <summary>آیا کلاس‌های آنلاین هم دارید؟</summary>
                 <p>بله، دوره‌های آنلاین برای زبان‌آموزانی که امکان حضور ندارند، برگزار می‌شود.</p>
             </details>
             <details class="faq-item">
-                <summary>چطور از پیشرفت فرزندم باخبر بشم؟</summary>
+                <summary>چطور از پیشرفت فرزندم باخبر شوم؟</summary>
                 <p>گزارش پیشرفت هر زبان‌آموز به‌صورت ماهانه برای والدین ارسال می‌شود.</p>
             </details>
         </div>
     </div>
 </section>
 
-<!-- ===== FORM ===== -->
+<!-- ===== PRE-REGISTRATION FORM ===== -->
 <section class="form-section">
     <div class="container">
         <div class="form-box">
-            <h2>پیش ثبت‌نام</h2>
-            <div class="sub">برای دریافت مشاوره و تعیین سطح رایگان، فرم زیر را پر کنید.</div>
+            <h2>پیش ثبت نام</h2>
+            <div class="sub">لطفا اطلاعات مورد نیاز را وارد کرده و منتظر تماس کارشناسان ما باشید.</div>
             <form>
                 <div class="form-group">
                     <label>نام و نام خانوادگی</label>
-                    <input type="text" placeholder="مثال: رضا احمدی">
+                    <input type="text" placeholder="نام و نام خانوادگی">
                 </div>
                 <div class="form-group">
                     <label>تلفن همراه</label>
-                    <input type="tel" placeholder="۰۹۱۲۳۴۵۶۷۸۹">
+                    <input type="tel" placeholder="۰۹۱۷۱۲۳۴۵۶۷">
                 </div>
                 <div class="form-group">
                     <label>نام فرزند</label>
@@ -640,25 +780,25 @@
                 <div class="form-group">
                     <label>سن فرزند</label>
                     <select>
-                        <option>۳ سال</option>
-                        <option>۴ سال</option>
-                        <option>۵ سال</option>
-                        <option>۶ سال</option>
-                        <option>۷ سال</option>
-                        <option>۸ سال</option>
+                        <option>۳</option>
+                        <option>۴</option>
+                        <option>۵</option>
+                        <option>۶</option>
+                        <option>۷</option>
+                        <option>۸</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>موضوع مشاوره</label>
                     <select>
-                        <option>مهدکودک</option>
-                        <option>پیش‌دبستان</option>
+                        <option>مهد انگلیسی</option>
+                        <option>پیش دبستان</option>
                         <option>دبستان</option>
                         <option>دوره‌های ترمیک</option>
-                        <option>دوره‌های آنلاین</option>
+                        <option>آنلاین</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-submit">درخواست مشاوره رایگان</button>
+                <button type="submit" class="btn-submit">ارسال</button>
             </form>
         </div>
     </div>
